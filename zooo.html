@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AARA Salon - Bespoke Beauty and Wellness</title>
+    <!-- Google Fonts: Playfair Display (Serif, Luxury) and Lato (Sans-Serif, Modern) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ------------------------------------------------ */
+        /* --- Rich Color Palette and Fonts --- */
+        /* ------------------------------------------------ */
+        :root {
+            /* Rich, warm, and dark tones */
+            --color-primary-dark: #2c1e1c; /* Rich Espresso Brown */
+            --color-secondary-gold: #d4a373; /* Burnished Gold for Luxury */
+            --color-background-light: #f9f5f1; /* Soft Vanilla Cream */
+            --color-text-light: #f9f5f1;
+            --color-text-dark: #2c1e1c;
+
+            /* Fonts */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- Global Reset & Base Styles --- */
+        /* ------------------------------------------------ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            background-color: var(--color-background-light);
+        }
+
+        .section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+        }
+
+        .section-title-reviews {
+            font-family: var(--font-serif);
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--color-secondary-gold);
+            margin-bottom: 10px;
+        }
+
+        .tagline-dark {
+            font-size: 1.25em;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+
+        .tagline-dark-reviews {
+            font-size: 1.25em;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 60px;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- Buttons (Call-to-Action) --- */
+        /* ------------------------------------------------ */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-secondary-gold);
+            color: var(--color-primary-dark);
+            font-family: var(--font-sans);
+            font-weight: 700;
+            padding: 15px 35px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+            letter-spacing: 1.5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #e0b48b;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(212, 163, 115, 0.6);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: transparent;
+            color: var(--color-secondary-gold);
+            border: 2px solid var(--color-secondary-gold);
+            padding: 10px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .secondary-button:hover {
+            background-color: var(--color-secondary-gold);
+            color: var(--color-text-dark);
+            box-shadow: 0 6px 15px rgba(212, 163, 115, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- NAVIGATION BAR & LOGO (UPDATED FOR CENTERED LINKS) --- */
+        /* ------------------------------------------------ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            /* Changed from space-between to space-around to visually center the nav group */
+            justify-content: space-around; 
+            align-items: center;
+            padding: 25px 10%;
+            background-color: var(--color-primary-dark);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            display: block;
+            line-height: 0;
+            font-family: var(--font-serif);
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--color-secondary-gold);
+        }
+
+        .logo-img {
+            height: 40px; 
+            width: auto;
+        }
+
+        .nav-links {
+            /* Added display flex and gap for equal link spacing on desktop */
+            display: flex;
+            gap: 40px; 
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            margin-left: 0; /* Reset margin as we are now using gap */
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secondary-gold);
+        }
+
+        .nav-cta {
+            background-color: var(--color-secondary-gold);
+            color: var(--color-primary-dark) !important;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            /* Ensure the CTA doesn't conflict with margin:0 from above */
+            margin: 0; 
+        }
+
+        .nav-cta:hover {
+            background-color: #e0b48b;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-secondary-gold);
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- HERO BANNERS --- */
+        /* ------------------------------------------------ */
+        .hero-banners {
+            position: relative;
+            width: 100%;
+            height: 120vh;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .slider-wrapper {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            width: 80%;
+            max-width: 1200px;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, transform 0.5s ease;
+            transform: translate(-50%, -50%);
+            /* Using placeholder image as a default background */
+            background-image: url('https://placehold.co/1200x800/2c1e1c/d4a373?text=AARA+Salon+Luxury+Interior');
+        }
+        
+        /* Fallback for the specific slides if user images fail/are missing */
+        .hero-slide[data-slide-id="1"] {
+            background-image: url('https://placehold.co/1200x800/d4a373/2c1e1c?text=The+Art+of+Indulgence');
+        }
+        .hero-slide[data-slide-id="2"] {
+            background-image: url('https://placehold.co/1200x800/2c1e1c/f9f5f1?text=Masterful+Hair+Styling');
+        }
+        .hero-slide[data-slide-id="3"] {
+            background-image: url('https://placehold.co/1200x800/8b5e3c/2c1e1c?text=Bespoke+Skincare');
+        }
+        .hero-slide[data-slide-id="4"] {
+            background-image: url('https://placehold.co/1200x800/4c3b37/f9f5f1?text=Flawless+Makeup');
+        }
+
+
+        .hero-slide.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+            border-radius: 25px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 20px;
+            color: var(--color-text-light);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s 0.2s ease-out, transform 1.5s 0.2s ease-out;
+        }
+
+        .hero-slide.active .hero-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .main-headline {
+            font-family: var(--font-serif);
+            font-size: 5em;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-family: var(--font-sans);
+            font-weight: 300;
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 55%;
+            transform: translateY(-50%);
+            z-index: 50; 
+            background: rgba(44, 30, 28, 0.7);
+            color: var(--color-secondary-gold);
+            border: none;
+            padding: 15px 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            outline: none;
+        }
+
+        .slider-arrow:hover {
+            background: var(--color-secondary-gold); 
+            color: var(--color-primary-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .left-arrow {
+            left: 20px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .right-arrow {
+            right: 20px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: var(--color-secondary-gold);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- ABOUT SECTION --- */
+        /* ------------------------------------------------ */
+        .about-section {
+            background-color: #ffffff;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Circular image with shadow */
+        .about-image-wrapper {
+            flex: 1;
+            position: relative;
+            padding: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(44, 30, 28, 0.25), 0 5px 15px rgba(212, 163, 115, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .about-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: sepia(0.1);
+            border-radius: 50%;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .about-image-wrapper:hover .about-image {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(44, 30, 28, 0.3), 0 10px 20px rgba(212, 163, 115, 0.25);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- SERVICE PILLARS SECTION --- */
+        /* ------------------------------------------------ */
+        .pillars-section {
+            background-color: var(--color-background-light);
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            width: 300px;
+            border: 1px solid #eee;
+            border-top: 5px solid var(--color-secondary-gold);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-top-color 0.4s ease;
+            border-radius: 8px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-top-color: var(--color-primary-dark);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: var(--color-secondary-gold);
+            margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.6em;
+            color: var(--color-primary-dark);
+            margin-bottom: 10px;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- BOOKING SECTION --- */
+        /* ------------------------------------------------ */
+        .booking-section {
+            background-color: var(--color-background-light);
+            padding-bottom: 100px;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .booking-form input:not([type="submit"]),
+        .booking-form select,
+        .booking-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(44, 30, 28, 0.1);
+            background-color: var(--color-background-light);
+            color: var(--color-primary-dark);
+            font-size: 1em;
+            font-family: var(--font-sans);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 4px;
+            appearance: none;
+        }
+
+        .booking-form input:focus, 
+        .booking-form select:focus,
+        .booking-form textarea:focus {
+            border-color: var(--color-secondary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.3);
+            outline: none;
+            background-color: #ffffff;
+        }
+
+        .booking-form .cta-button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .privacy-note {
+            font-size: 0.9em;
+            opacity: 0.7;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- Form Refinements (Date/Select) --- */
+        /* ------------------------------------------------ */
+
+        /* Custom Select Dropdown Arrow */
+        .booking-form select {
+            /* Adds space for the custom chevron icon */
+            padding-right: 40px; 
+            /* Dark Espresso icon for default state (SVG data URI) */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c1e1c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px;
+        }
+
+        /* Gold icon for focus state, matching border color */
+        .booking-form select:focus {
+            /* Gold icon on focus (SVG data URI) */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4a373'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        }
+
+        /* Style for Date input text and ensuring it uses dark color */
+        .booking-form input[type="date"] {
+            color: var(--color-primary-dark);
+        }
+
+        /* Webkit specific styling for the date picker icon (Chrome, Safari, Edge) */
+        .booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+            /* Filter to approximate the primary dark color for the icon */
+            filter: invert(18%) sepia(2%) saturate(1915%) hue-rotate(341deg) brightness(97%) contrast(93%);
+            opacity: 1;
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        /* Change calendar icon color to gold on focus/hover */
+        .booking-form input[type="date"]:focus::-webkit-calendar-picker-indicator,
+        .booking-form input[type="date"]:hover::-webkit-calendar-picker-indicator {
+            /* Filter to approximate the secondary gold color */
+            filter: invert(72%) sepia(21%) saturate(542%) hue-rotate(338deg) brightness(90%) contrast(85%); 
+        }
+
+        /* ------------------------------------------------ */
+        /* --- LOCATIONS AVAILABLE SECTION --- */
+        /* ------------------------------------------------ */
+        .locations-section {
+            background-color: #ffffff;
+        }
+
+        .location-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .location-card {
+            background-color: var(--color-background-light);
+            padding: 30px;
+            border-left: 3px solid var(--color-primary-dark);
+            text-align: left;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        .location-card h3 {
+            font-family: var(--font-serif);
+            color: var(--color-secondary-gold);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .location-card address {
+            font-style: normal;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .location-link {
+            display: inline-block;
+            color: var(--color-secondary-gold);
+            font-weight: 700;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- REVIEWS & TESTIMONIALS --- */
+        /* ------------------------------------------------ */
+        .reviews-section {
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
+        }
+
+        .review-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            border-bottom: 3px solid var(--color-secondary-gold);
+        }
+
+        .star-rating {
+            color: var(--color-secondary-gold);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--color-secondary-gold);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- FOOTER (UPDATED FOR LIGHT BACKGROUND) --- */
+        /* ------------------------------------------------ */
+        .footer {
+            /* Changed to light background */
+            background-color: var(--color-background-light); 
+            /* Changed to dark text */
+            color: var(--color-primary-dark); 
+            padding: 50px 5%;
+            font-size: 0.9em;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.8em;
+            color: var(--color-secondary-gold);
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1em;
+            /* Changed to dark text */
+            color: var(--color-primary-dark); 
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col a {
+            display: block;
+            /* Changed to dark link text */
+            color: rgba(44, 30, 28, 0.7); 
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-secondary-gold);
+        }
+
+        .social-links a {
+            display: inline-block;
+            font-size: 1.5em;
+            margin-right: 15px;
+            /* Ensure social icons are visible on light background */
+            color: var(--color-primary-dark); 
+        }
+
+        .copyright {
+            text-align: center;
+            /* Changed border to be dark on light background */
+            border-top: 1px solid rgba(44, 30, 28, 0.1); 
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .copyright a {
+            /* Ensure copyright link is dark */
+            color: var(--color-primary-dark); 
+            text-decoration: underline;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- MEDIA QUERIES --- */
+        /* ------------------------------------------------ */
+        @media (max-width: 1024px) {
+
+            .main-headline {
+                font-size: 4em;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-text {
+                order: 2;
+            }
+
+            .about-image-wrapper {
+                order: 1;
+                max-width: 400px;
+                margin-bottom: 40px;
+            }
+            
+            .review-container {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 4%;
+            }
+
+            /* Hero Banners */
+            .hero-banners {
+                height: 85vh;
+            }
+
+            .main-headline {
+                font-size: 3em;
+            }
+            .tagline {
+                font-size: 1.1em;
+            }
+            
+            /* Navigation - Mobile View */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--color-primary-dark);
+                position: absolute;
+                top: 60px; /* Below the navbar */
+                left: 0;
+                padding: 10px 0;
+                /* Reset desktop styles for mobile */
+                gap: 0; 
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                margin: 10px 20px;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-cta {
+                margin: 15px 20px 0 20px;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+            
+            /* Service Pillars */
+            .service-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .service-card {
+                width: 100%;
+                max-width: none;
+            }
+
+            /* Reviews Section */
+            .review-container {
+                flex-direction: column;
+            }
+
+            .review-card {
+                min-width: 100%;
+            }
+
+            /* Footer */
+            .footer-grid {
+                justify-content: flex-start;
+            }
+
+            .footer-col {
+                min-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-headline {
+                font-size: 2.5em;
+            }
+            .section-title, .section-title-reviews {
+                font-size: 2em;
+            }
+            
+            .about-text p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="#home" class="nav-logo">
+            <!-- Placeholder for Logo Image -->
+             AARA
+        </a>
+        <div class="nav-links">
+            <a href="#services">Shop</a>
+            <a href="#locations">Find us</a>
+            <!-- Using the CTA styling for the Franchise link to maintain the design's call-to-action appearance -->
+            <a href="#" class="nav-cta">Franchise</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- 1. HERO BANNERS SECTION (Manual-Sliding, 4 Slides) -->
+    <section id="home" class="hero-banners">
+        <div class="slider-wrapper">
+            
+            <!-- Slide 1 -->
+            <div class="hero-slide active" data-slide-id="1">
+                <div class="hero-content">
+                    <h1 class="main-headline">The Art of Indulgence.</h1>
+                    <p class="tagline">Step into a space where luxury meets tranquility.</p>
+                    <a href="#booking" class="cta-button">Reserve Your Spot</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" data-slide-id="2">
+                <div class="hero-content">
+                    <h1 class="main-headline">Masterful Hair Styling.</h1>
+                    <p class="tagline">Precision cuts and custom coloring for every identity.</p>
+                    <a href="#services" class="cta-button">Explore Hair Services</a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" data-slide-id="3">
+                <div class="hero-content">
+                    <h1 class="main-headline">Radiant Skin.</h1>
+                    <p class="tagline">Advanced facials and targeted therapies for lasting health.</p>
+                    <a href="#services" class="cta-button">View Skincare</a>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="hero-slide" data-slide-id="4">
+                <div class="hero-content">
+                    <h1 class="main-headline">Flawless Artistry.</h1>
+                    <p class="tagline">Bespoke makeup for bridal, party, and editorial moments.</p>
+                    <a href="#booking" class="cta-button">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation Arrows -->
+        <button class="slider-arrow left-arrow" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow right-arrow" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Slider Dots -->
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about" class="section about-section">
+        <h2 class="section-title">Our Dedication to Bespoke Beauty</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>AARA Salon was founded on the philosophy that true beauty is deeply personal. We don't believe in one-size-fits-all treatments. Our mission is to provide a serene sanctuary where artistry, advanced techniques, and premium products converge to create tailored experiences.</p>
+                <p>Each visit to AARA is a bespoke journey designed to enhance your natural elegance and promote holistic well-being. From our master stylists and licensed estheticians to our warm, luxurious ambiance, every detail is curated to ensure your utmost satisfaction and long-lasting results.</p>
+                <a href="#reviews" class="secondary-button">Meet Our Experts</a>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="https://placehold.co/400x400/2c1e1c/f9f5f1?text=Expert+Stylist" onerror="this.src='https://placehold.co/400x400/2c1e1c/f9f5f1?text=Expert+Stylist';" alt="Expert Salon Stylist" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICE HIGHLIGHTS (Three Pillars) -->
+    <section id="services" class="section pillars-section">
+        <h2 class="section-title">Elevate Your Look: Our Three Pillars</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <i class="fas fa-cut service-icon"></i>
+                <h4>The Art of Hair (Unisex)</h4>
+                <p>Precision cuts, custom coloring, and transformative treatments executed by master stylists.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-magic service-icon"></i>
+                <h4>The Makeup Studio</h4>
+                <p>Bespoke bridal, party, and editorial makeup artistry that captures your unique vision flawlessly.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-spa service-icon"></i>
+                <h4>The Skin Sanctuary</h4>
+                <p>Advanced facials, specialized clean-ups, and targeted skin therapies for radiant, lasting health.</p>
+            </div>
+        </div>
+        <a href="#booking" class="secondary-button">View Service Menu & Book</a>
+    </section>
+
+    <!-- 4. BOOK AN APPOINTMENT SECTION -->
+    <section id="booking" class="section booking-section">
+        <h2 class="section-title">Reserve Your Moment of Indulgence</h2>
+        <p class="tagline-dark">A private experience with our master artists awaits you.</p>
+        
+        <form class="booking-form">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Mobile Number" required>
+            <select required>
+                <option value="">Select a Primary Service</option>
+                <option value="Hair">Hair Styling/Cut</option>
+                <option value="Color">Hair Colouring</option>
+                <option value="Makeup">Makeup Consultation (Bridal/Party)</option>
+                <option value="Skin">Skincare/Facial</option>
+            </select>
+            <input type="date" placeholder="Preferred Date" required>
+            <select required>
+                <option value="">Select a Time Slot</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="09:30">9:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="13:30">1:30 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="14:30">2:30 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="15:30">3:30 PM</option>
+                <option value="16:00">4:00 PM</option>
+                <option value="16:30">4:30 PM</option>
+                <option value="17:00">5:00 PM</option>
+                <option value="17:30">5:30 PM</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="18:30">6:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:00">8:00 PM</option>
+                <option value="20:30">8:30 PM</option>
+            </select>
+            <button type="submit" class="cta-button">Confirm Reservation</button>
+            <p class="privacy-note">We respect your privacy. All bookings confirmed by phone or email.</p>
+        </form>
+    </section>
+
+    <!-- 5. LOCATIONS AVAILABLE SECTION -->
+    <section id="locations" class="section locations-section">
+        <h2 class="section-title">Find Your AARA Sanctuary</h2>
+        <p class="tagline-dark">Two convenient, premium locations built for your relaxation.</p>
+
+        <div class="location-container">
+            <div class="location-card">
+                <h3>AARA SALON - Nizampet</h3>
+                <address>
+                    1st Floor, SBI Building, Nizampet Rd<br>
+                    Nizampet, Hyderabad, 500090
+                </address>
+                <p>Phone: +91 9247522061</p>
+                <a href="https://maps.app.goo.gl/A69N3dNLugy1cT1LA" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            <div class="location-card">
+                 <h3>Boutique Centre - East Hills (Placeholder)</h3>
+                 <address>
+                     456 Serenity Road, Plaza Level<br>
+                     East Hills Residency, 560002
+                 </address>
+                 <p>Phone: (555) 987-6543</p>
+                 <a href="#" target="_blank" class="location-link">Check Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. REVIEWS & TESTIMONIALS -->
+    <section id="reviews" class="section reviews-section">
+        <h2 class="section-title-reviews">Client Love. Lasting Impressions.</h2>
+        <p class="tagline-dark-reviews">Hear from those who've experienced the AARA difference.</p>
+
+        <div class="review-container">
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"The best hair coloring service I've ever had. My stylist, Rhea, was an absolute professional and truly listened to what I wanted. Worth every penny!"</p>
+                <p class="review-author">— Anjali M.</p>
+            </div>
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I booked my bridal makeup here and was blown away. Flawless execution and I felt so relaxed. The team is genuinely lovely."</p>
+                <p class="review-author">— Sarah P.</p>
+            </div>
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">"Great facial treatment! My skin felt rejuvenated. Only slight wait time, but the service quality makes up for it. Highly recommend."</p>
+                <p class="review-author">— Ben K.</p>
+            </div>
+        </div>
+        <a href="#booking" class="secondary-button">Leave a Review</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">AARA Salon</h3>
+                <p>Excellence in Hair, Makeup, and Skin.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#locations">Locations</a>
+                <a href="#booking">Book Now</a>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 AARA Salon. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const slides = document.querySelectorAll('.hero-slide');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            const sliderDotsContainer = document.querySelector('.slider-dots');
+
+            let currentSlide = 0;
+            let slideInterval;
+
+            // --- 1. Mobile Menu Toggle ---
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+
+            // --- 2. Hero Slider Functionality ---
+            
+            // Create dots
+            const createDots = () => {
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.setAttribute('data-index', index);
+                    dot.addEventListener('click', () => goToSlide(index));
+                    sliderDotsContainer.appendChild(dot);
+                });
+            };
+
+            const updateDots = () => {
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            };
+
+            const goToSlide = (index) => {
+                // Ensure index is within bounds
+                currentSlide = (index + slides.length) % slides.length; 
+                
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentSlide);
+                    
+                    // Reset content visibility on all slides
+                    const content = slide.querySelector('.hero-content');
+                    if (content) {
+                        content.style.opacity = '0';
+                        content.style.transform = 'translateY(20px)';
+                    }
+                });
+                
+                // Animate content of the active slide
+                const activeContent = slides[currentSlide].querySelector('.hero-content');
+                if (activeContent) {
+                    // Timeout allows CSS transitions to re-trigger after opacity changes
+                    setTimeout(() => {
+                        activeContent.style.opacity = '1';
+                        activeContent.style.transform = 'translateY(0)';
+                    }, 50); 
+                }
+
+                updateDots();
+                resetInterval();
+            };
+
+            const nextSlide = () => {
+                goToSlide(currentSlide + 1);
+            };
+
+            const prevSlide = () => {
+                goToSlide(currentSlide - 1);
+            };
+
+            const startInterval = () => {
+                slideInterval = setInterval(nextSlide, 7000); // Change slide every 7 seconds
+            };
+
+            const resetInterval = () => {
+                clearInterval(slideInterval);
+                startInterval();
+            };
+
+            // Event Listeners for Arrows
+            leftArrow.addEventListener('click', prevSlide);
+            rightArrow.addEventListener('click', nextSlide);
+
+            // Initialize slider
+            createDots();
+            goToSlide(0); // Start at the first slide
+            startInterval();
+        });
+    </script>
+
+</body>
+</html>

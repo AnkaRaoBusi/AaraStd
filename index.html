@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AARA Salon - Bespoke Beauty and Wellness</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <!-- Google Fonts: Playfair Display (Serif, Luxury) and Lato (Sans-Serif, Modern) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="#home" class="nav-logo">
+            <img src="images/65.png" alt="AARA" class="logo-img">
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="index.html">Services</a>
+            <a href="#locations">Find us</a>
+            <a href="#">Franchise</a>
+            <a href="#booking" class="nav-cta">Book Now</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- 1. HERO SLIDER SECTION -->
+    <!-- The entire slide area is now clickable for navigation -->
+    <section id="home" class="hero-banners">
+        <div class="slider-wrapper">
+            
+            <!-- Slides - Using placeholder images for demonstration -->
+            <div class="hero-slide active" data-slide-id="1" style="background-image: url('images/hero1.png');">
+                <div class="hero-content">
+                    <h1 class="main-headline">The Art of Indulgence.</h1>
+                    <p class="tagline">Step into a space where luxury meets tranquility.</p>
+                    <a href="#booking" class="cta-button">Reserve Your Spot</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-slide-id="2" style="background-image: url('images/hero2.jpg');">
+                <div class="hero-content">
+                    <h1 class="main-headline">Masterful Hair Styling.</h1>
+                    <p class="tagline">Precision cuts and custom coloring for every identity.</p>
+                    <a href="services.html" class="cta-button">Explore Hair Services</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-slide-id="3" style="background-image: url('images/hero3.jpg');">
+                <div class="hero-content">
+                    <h1 class="main-headline">Radiant Skin.</h1>
+                    <p class="tagline">Advanced facials and targeted therapies for lasting health.</p>
+                    <a href="services.html" class="cta-button">View Skincare</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-slide-id="4" style="background-image: url('images/hero4.jpg');">
+                <div class="hero-content">
+                    <h1 class="main-headline">Flawless Artistry.</h1>
+                    <p class="tagline">Bespoke makeup for bridal, party, and editorial moments.</p>
+                    <a href="#booking" class="cta-button">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Arrows removed as requested -->
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about" class="section about-section">
+        <h2 class="section-title">Our Dedication to Bespoke Beauty</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>AARA Salon was founded on the philosophy that true beauty is deeply personal. We don't believe in one-size-fits-all treatments. Our mission is to provide a serene sanctuary where artistry, advanced techniques, and premium products converge to create tailored experiences.</p>
+                <p>Each visit to AARA is a bespoke journey designed to enhance your natural elegance and promote holistic well-being. From our master stylists and licensed estheticians to our warm, luxurious ambiance, every detail is curated to ensure your utmost satisfaction and long-lasting results.</p>
+                <a href="#reviews" class="secondary-button">Meet Our Experts</a>
+            </div>
+            <div class="about-image-wrapper">
+                <!-- Added animated-oval class here -->
+                <img src="images/about.jpg" alt="Expert Salon Stylist" class="about-image animated-oval">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES (PILLARS) SECTION -->
+    <section id="services" class="section pillars-section">
+        <h2 class="section-title">Elevate Your Look: Our Three Pillars</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <i class="fas fa-cut service-icon"></i>
+                <h4>The Art of Hair (Unisex)</h4>
+                <p>Precision cuts, custom coloring, and transformative treatments executed by master stylists.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-magic service-icon"></i>
+                <h4>The Makeup Studio</h4>
+                <p>Bespoke bridal, party, and editorial makeup artistry that captures your unique vision flawlessly.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-spa service-icon"></i>
+                <h4>The Skin Sanctuary</h4>
+                <p>Advanced facials, specialized clean-ups, and targeted skin therapies for radiant, lasting health.</p>
+            </div>
+        </div>
+        <a href="services.html" class="secondary-button">View Service Menu & Book</a>
+    </section>
+
+    <!-- 4. BOOKING SECTION -->
+    <section id="booking" class="section booking-section">
+        <h2 class="section-title">Reserve Your Moment of Indulgence</h2>
+        <p class="tagline-dark">A private experience with our master artists awaits you.</p>
+        
+        <form id="booking-form" class="booking-form">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="tel" id="mobile-number" placeholder="Mobile Number" pattern="[0-9]{10,15}" required>
+            <select required>
+                <option value="">Select a Primary Service</option>
+                <option value="Hair">Hair Styling/Cut</option>
+                <option value="Color">Hair Colouring</option>
+                <option value="Makeup">Makeup Consultation (Bridal/Party)</option>
+                <option value="Skin">Skincare/Facial</option>
+            </select>
+            <input type="date" placeholder="Preferred Date" required>
+            <select required>
+                <option value="">Select a Time Slot</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="12:00">9:30 AM</option>
+                <option value="15:00">10:00 AM</option>
+                <option value="18:00">10:30 AM</option>
+                <option value="09:00">11:00 AM</option>
+                <option value="12:00">11:30 AM</option>
+                <option value="15:00">12:00 PM</option>
+                <option value="18:00">12:30 PM</option>
+                <option value="09:00">1:00 PM</option>
+                <option value="12:00">1:30 PM</option>
+                <option value="15:00">2:00 PM</option>
+                <option value="18:00">2:30 PM</option>
+                <option value="09:00">3:00 PM</option>
+                <option value="12:00">3:30 PM</option>
+                <option value="15:00">4:00 PM</option>
+                <option value="18:00">4:30 PM</option>
+                <option value="09:00">5:00 PM</option>
+                <option value="12:00">5:30 PM</option>
+                <option value="15:00">6:00 PM</option>
+                <option value="18:00">6:30 PM</option>
+                <option value="09:00">7:00 PM</option>
+                <option value="12:00">7:30 PM</option>
+                <option value="15:00">8:00 PM</option>
+                <option value="18:00">8:30 PM</option>
+            </select>
+            <button type="submit" class="cta-button">Confirm Reservation</button>
+            <p class="privacy-note">We respect your privacy. All bookings confirmed by phone or email.</p>
+        </form>
+    </section>
+
+    <!-- 5. LOCATIONS SECTION -->
+    <section id="locations" class="section locations-section">
+        <h2 class="section-title">Find Your AARA Sanctuary</h2>
+        <p class="tagline-dark">Two convenient, premium locations built for your relaxation.</p>
+
+        <div class="location-container">
+            <div class="location-card">
+                <h3>AARA SALON - Nizampet</h3>
+                <address>
+                    1st Floor, SBI Building, Nizampet Rd<br>
+                    Nizampet, Hyderabad, 500090
+                </address>
+                <p>Phone: +91 9247522061</p>
+                <a href="https://maps.app.goo.gl/A69N3dNLugy1cT1LA" target="_blank" class="location-link">Get Directions</a>
+            </div>
+             <div class="location-card">
+                <h3>2nd Branch</h3>
+                <address>
+                    Address<br>
+                    Address 2nd Line
+                </address>
+                <p>Phone: +91 9876543210</p>
+                <a href="https://maps.app.goo.gl/A69N3dNLugy1cT1LA" target="_blank" class="location-link">Get Directions</a>
+            </div> 
+        </div>
+    </section>
+
+    <!-- 6. REVIEWS SECTION -->
+    <section id="reviews" class="section reviews-section">
+        <h2 class="section-title-reviews">Client Love. Lasting Impressions.</h2>
+        <p class="tagline-dark-reviews">Hear from those who've experienced the AARA difference.</p>
+
+        <div class="review-container">
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"The best hair coloring service I've ever had. My stylist, Rhea, was an absolute professional and truly listened to what I wanted. Worth every penny!"</p>
+                <p class="review-author">— Anjali M.</p>
+            </div>
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I booked my bridal makeup here and was blown away. Flawless execution and I felt so relaxed. The team is genuinely lovely."</p>
+                <p class="review-author">— Sarah P.</p>
+            </div>
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">"Great facial treatment! My skin felt rejuvenated. Only slight wait time, but the service quality makes up for it. Highly recommend."</p>
+                <p class="review-author">— Ben K.</p>
+            </div>
+        </div>
+        <a href="#booking" class="secondary-button">Leave a Review</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">AARA Salon</h3>
+                <p>Excellence in Hair, Makeup, and Skin.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="services.html">Services</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#locations">Locations</a>
+                <a href="#booking">Book Now</a>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2025 AARA Salon. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- OTP Verification Modal Structure -->
+    <div id="otp-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Verify Your Mobile Number</h3>
+            <p>A 6-digit OTP has been sent to **<span id="display-mobile-number"></span>**.</p>
+            <div class="otp-input-group">
+                <input type="text" id="otp-input" maxlength="6" placeholder="Enter OTP" inputmode="numeric" pattern="[0-9]{6}" required>
+            </div>
+            <button id="verify-otp-button" class="cta-button">Verify & Confirm</button>
+            <div class="modal-footer-links">
+                <p>Didn't receive it? <a href="#" id="resend-otp">Resend OTP</a></p>
+                <button id="close-modal" class="secondary-button-transparent">Cancel Booking</button>
+            </div>
+            <p id="modal-message" class="modal-message"></p>
+        </div>
+    </div>
+
+
+    <!-- External JavaScript link -->
+    <script src="js/script.js" defer></script>
+
+</body>
+</html>

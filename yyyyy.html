@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AARA Salon - Bespoke Beauty and Wellness</title>
+    <!-- Google Fonts: Playfair Display (Serif, Luxury) and Lato (Sans-Serif, Modern) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- INTEGRATED STYLING -->
+    <style>
+        /* ------------------------------------------------ */
+        /* --- Rich Color Palette and Fonts --- */
+        /* ------------------------------------------------ */
+        :root {
+            /* Rich, warm, and dark tones */
+            --color-primary-dark: #2c1e1c; /* Rich Espresso Brown */
+            --color-secondary-gold: #d4a373; /* Burnished Gold for Luxury */
+            --color-background-light: #f9f5f1; /* Soft Vanilla Cream */
+            --color-text-light: #f9f5f1;
+            --color-text-dark: #2c1e1c;
+
+            /* Fonts */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- Global Reset & Base Styles --- */
+        /* ------------------------------------------------ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            background-color: var(--color-background-light);
+            padding-top: 80px; /* Space for fixed navbar */
+        }
+        
+        /* ------------------------------------------------ */
+        /* --- Section Styling & Typography --- */
+        /* ------------------------------------------------ */
+        .section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #ffffff;
+        }
+        
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+        }
+
+        .section-title-reviews {
+            font-family: var(--font-serif);
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--color-text-light); /* Different color for dark review section */
+        }
+        
+        .tagline-dark {
+            font-size: 1.25em;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: rgba(44, 30, 28, 0.8);
+        }
+
+        .tagline-dark-reviews {
+            font-size: 1.25em;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: rgba(249, 245, 241, 0.9);
+        }
+
+
+        /* ------------------------------------------------ */
+        /* --- Buttons --- */
+        /* ------------------------------------------------ */
+        .cta-button, .secondary-button, .secondary-button-transparent {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            padding: 15px 35px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+            letter-spacing: 1.5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .cta-button {
+            background-color: var(--color-secondary-gold);
+            color: var(--color-primary-dark);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #e0b48b;
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 15px rgba(212, 163, 115, 0.6);
+        }
+        
+        .secondary-button {
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
+            font-size: 1em;
+            padding: 12px 25px;
+            margin-top: 20px;
+        }
+
+        .secondary-button:hover {
+            background-color: #1a1413;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button-transparent {
+            background: none;
+            color: var(--color-primary-dark);
+            border: 1px solid var(--color-primary-dark);
+            font-size: 1em;
+            padding: 12px 25px;
+            margin-top: 10px;
+        }
+
+        .secondary-button-transparent:hover {
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- NAVIGATION BAR & LOGO --- */
+        /* ------------------------------------------------ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--color-primary-dark);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            display: block;
+            line-height: 0;
+            font-family: var(--font-serif);
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--color-secondary-gold);
+            margin-right: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px; 
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secondary-gold);
+        }
+
+        .nav-cta {
+            background-color: var(--color-secondary-gold);
+            color: var(--color-primary-dark) !important;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            margin-left: 15px;
+            text-transform: none; /* Keep case natural for CTA */
+        }
+
+        .nav-cta:hover {
+            background-color: #e0b48b;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-secondary-gold);
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        
+        /* ------------------------------------------------ */
+        /* --- HERO SLIDER --- */
+        /* ------------------------------------------------ */
+        .hero-banners {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            margin-top: -80px; /* Offset the padding from the body */
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-content {
+            z-index: 10;
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            /* Subtle background for readability */
+            background-color: rgba(44, 30, 28, 0.4); 
+            border-radius: 8px;
+        }
+
+        .hero-content .main-headline {
+            font-family: var(--font-serif);
+            font-size: 4.5em;
+            margin-bottom: 10px;
+            color: var(--color-secondary-gold);
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(44, 30, 28, 0.6);
+            border: none;
+            color: var(--color-text-light);
+            font-size: 1.5em;
+            padding: 15px 10px;
+            cursor: pointer;
+            z-index: 50;
+            transition: background 0.3s;
+            border-radius: 4px;
+        }
+
+        .slider-arrow:hover {
+            background: var(--color-secondary-gold);
+            color: var(--color-primary-dark);
+        }
+
+        .left-arrow {
+            left: 20px;
+        }
+
+        .right-arrow {
+            right: 20px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(249, 245, 241, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: var(--color-secondary-gold);
+            transform: scale(1.2);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- ABOUT SECTION --- */
+        /* ------------------------------------------------ */
+        .about-section {
+            background-color: #ffffff;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: rgba(44, 30, 28, 0.8);
+        }
+
+        .about-image-wrapper {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ------------------------------------------------ */
+        /* --- SERVICES (PILLARS) SECTION --- */
+        /* ------------------------------------------------ */
+        .pillars-section {
+            background-color: var(--color-background-light);
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: var(--color-secondary-gold);
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--color-primary-dark);
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: rgba(44, 30, 28, 0.7);
+        }
+        
+        /* ------------------------------------------------ */
+        /* --- BOOKING SECTION --- */
+        /* ------------------------------------------------ */
+        .booking-section {
+            background-color: #ffffff;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--color-background-light);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .booking-form input,
+        .booking-form select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(44, 30, 28, 0.1);
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: var(--font-sans);
+            color: var(--color-primary-dark);
+            background-color: #ffffff;
+            transition: border-color 0.3s;
+        }
+
+        .booking-form input:focus,
+        .booking-form select:focus {
+            border-color: var(--color-secondary-gold);
+            outline: none;
+        }
+
+        .booking-form .cta-button {
+            grid-column: 1 / -1; /* Make the button span all columns */
+            margin-top: 10px;
+        }
+
+        .privacy-note {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.9em;
+            color: rgba(44, 30, 28, 0.6);
+            margin-top: 10px;
+        }
+        
+        /* ------------------------------------------------ */
+        /* --- LOCATIONS SECTION --- */
+        /* ------------------------------------------------ */
+        .locations-section {
+            background-color: var(--color-background-light);
+        }
+
+        .location-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .location-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .location-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--color-secondary-gold);
+        }
+
+        .location-card address,
+        .location-card p {
+            margin-bottom: 15px;
+            font-style: normal;
+            line-height: 1.7;
+            color: rgba(44, 30, 28, 0.8);
+        }
+
+        .location-link {
+            display: inline-block;
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-secondary-gold);
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+
+        .location-link:hover {
+            color: var(--color-secondary-gold);
+        }
+        
+        /* ------------------------------------------------ */
+        /* --- REVIEWS SECTION --- */
+        /* ------------------------------------------------ */
+        .reviews-section {
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
+        }
+
+        .review-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(212, 163, 115, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .review-card:hover {
+            background-color: rgba(212, 163, 115, 0.1);
+        }
+
+        .star-rating {
+            color: var(--color-secondary-gold);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .review-text {
+            font-family: var(--font-serif);
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            color: var(--color-text-light);
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--color-secondary-gold);
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- FOOTER --- */
+        /* ------------------------------------------------ */
+        .footer {
+            background-color: var(--color-background-light); 
+            color: var(--color-primary-dark); 
+            padding: 50px 5%;
+            font-size: 0.9em;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.8em;
+            color: var(--color-secondary-gold);
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1em;
+            color: var(--color-primary-dark); 
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(44, 30, 28, 0.7); 
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-secondary-gold);
+        }
+
+        .social-links a {
+            display: inline-block;
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: var(--color-primary-dark); 
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(44, 30, 28, 0.1); 
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .copyright a {
+            color: var(--color-primary-dark); 
+            text-decoration: underline;
+        }
+
+        /* ------------------------------------------------ */
+        /* --- OTP MODAL STYLING --- */
+        /* ------------------------------------------------ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--color-background-light);
+            padding: 40px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: var(--color-primary-dark);
+        }
+
+        .modal-content p {
+            margin-bottom: 25px;
+            color: rgba(44, 30, 28, 0.8);
+        }
+
+        .otp-input-group {
+            margin-bottom: 25px;
+        }
+
+        #otp-input {
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            letter-spacing: 15px; /* Spacing for OTP digits */
+            border: 2px solid rgba(44, 30, 28, 0.1);
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+
+        .modal-footer-links {
+            margin-top: 20px;
+        }
+
+        .modal-footer-links p {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        #resend-otp {
+            color: var(--color-secondary-gold);
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        #resend-otp:hover {
+            color: #e0b48b;
+        }
+        
+        #modal-message {
+            margin-top: 20px;
+            font-weight: 700;
+            color: #cc0000; /* Error/Success message color */
+            font-family: var(--font-sans);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ------------------------------------------------ */
+        /* --- MEDIA QUERIES (Responsiveness) --- */
+        /* ------------------------------------------------ */
+        @media (max-width: 1024px) {
+            .hero-content .main-headline {
+                font-size: 3.5em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 65px; /* Adjust for smaller navbar */
+            }
+            .section {
+                padding: 60px 4%;
+            }
+
+            .section-title, .section-title-reviews {
+                font-size: 2.2em;
+            }
+
+            /* Navigation - Mobile View */
+            .navbar {
+                padding: 10px 5%; 
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--color-primary-dark);
+                position: absolute;
+                top: 61px; 
+                left: 0;
+                padding: 10px 0;
+                gap: 0; 
+                margin: 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                margin: 5px 20px;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: calc(100% - 40px);
+                text-align: center;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+                margin-bottom: 10px;
+            }
+
+            .nav-cta {
+                margin: 15px 20px 0 20px;
+                text-align: center;
+                width: calc(100% - 40px);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+            
+            /* Hero Content */
+            .hero-content .main-headline {
+                font-size: 2.5em;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+            }
+
+            /* About Section */
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                text-align: center;
+                order: 2;
+            }
+
+            .about-image-wrapper {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            
+            /* Locations */
+            .location-container {
+                flex-direction: column;
+            }
+            
+            /* Footer */
+            .footer-grid {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .footer-col {
+                min-width: 100%;
+                text-align: center;
+            }
+            .social-links {
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="#home" class="nav-logo">
+            AARA
+        </a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="services.html">Services</a> <!-- Changed to static link, assuming user will create services.html -->
+            <a href="#locations">Find us</a>
+            <a href="#">Franchise</a>
+            <a href="#booking" class="nav-cta">Book Now</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- 1. HERO SLIDER SECTION -->
+    <section id="home" class="hero-banners">
+        <div class="slider-wrapper">
+            
+            <!-- Slides - Using placeholder images for demonstration -->
+            <div class="hero-slide active" data-slide-id="1" style="background-image: url('https://placehold.co/1920x1080/2c1e1c/d4a373?text=AARA+LUXURY+SALON');">
+                <div class="hero-content">
+                    <h1 class="main-headline">The Art of Indulgence.</h1>
+                    <p class="tagline">Step into a space where luxury meets tranquility.</p>
+                    <a href="#booking" class="cta-button">Reserve Your Spot</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-slide-id="2" style="background-image: url('https://placehold.co/1920x1080/d4a373/2c1e1c?text=MASTERFUL+HAIR+ARTISTRY');">
+                <div class="hero-content">
+                    <h1 class="main-headline">Masterful Hair Styling.</h1>
+                    <p class="tagline">Precision cuts and custom coloring for every identity.</p>
+                    <a href="services.html" class="cta-button">Explore Hair Services</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-slide-id="3" style="background-image: url('https://placehold.co/1920x1080/f9f5f1/2c1e1c?text=RADIANT+SKIN+CARE');">
+                <div class="hero-content">
+                    <h1 class="main-headline">Radiant Skin.</h1>
+                    <p class="tagline">Advanced facials and targeted therapies for lasting health.</p>
+                    <a href="services.html" class="cta-button">View Skincare</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-slide-id="4" style="background-image: url('https://placehold.co/1920x1080/a38060/f9f5f1?text=FLAWLESS+MAKEUP+ARTISTRY');">
+                <div class="hero-content">
+                    <h1 class="main-headline">Flawless Artistry.</h1>
+                    <p class="tagline">Bespoke makeup for bridal, party, and editorial moments.</p>
+                    <a href="#booking" class="cta-button">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="slider-arrow left-arrow" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow right-arrow" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about" class="section about-section">
+        <h2 class="section-title">Our Dedication to Bespoke Beauty</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>AARA Salon was founded on the philosophy that true beauty is deeply personal. We don't believe in one-size-fits-all treatments. Our mission is to provide a serene sanctuary where artistry, advanced techniques, and premium products converge to create tailored experiences.</p>
+                <p>Each visit to AARA is a bespoke journey designed to enhance your natural elegance and promote holistic well-being. From our master stylists and licensed estheticians to our warm, luxurious ambiance, every detail is curated to ensure your utmost satisfaction and long-lasting results.</p>
+                <a href="#reviews" class="secondary-button">Meet Our Experts</a>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="https://placehold.co/400x400/2c1e1c/f9f5f1?text=Expert+Stylist" alt="Expert Salon Stylist" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES (PILLARS) SECTION -->
+    <section id="services" class="section pillars-section">
+        <h2 class="section-title">Elevate Your Look: Our Three Pillars</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <i class="fas fa-cut service-icon"></i>
+                <h4>The Art of Hair (Unisex)</h4>
+                <p>Precision cuts, custom coloring, and transformative treatments executed by master stylists.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-magic service-icon"></i>
+                <h4>The Makeup Studio</h4>
+                <p>Bespoke bridal, party, and editorial makeup artistry that captures your unique vision flawlessly.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-spa service-icon"></i>
+                <h4>The Skin Sanctuary</h4>
+                <p>Advanced facials, specialized clean-ups, and targeted skin therapies for radiant, lasting health.</p>
+            </div>
+        </div>
+        <a href="services.html" class="secondary-button">View Service Menu & Book</a>
+    </section>
+
+    <!-- 4. BOOKING SECTION -->
+    <section id="booking" class="section booking-section">
+        <h2 class="section-title">Reserve Your Moment of Indulgence</h2>
+        <p class="tagline-dark">A private experience with our master artists awaits you.</p>
+        
+        <form id="booking-form" class="booking-form">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="tel" id="mobile-number" placeholder="Mobile Number" pattern="[0-9]{10,15}" required>
+            <select required>
+                <option value="">Select a Primary Service</option>
+                <option value="Hair">Hair Styling/Cut</option>
+                <option value="Color">Hair Colouring</option>
+                <option value="Makeup">Makeup Consultation (Bridal/Party)</option>
+                <option value="Skin">Skincare/Facial</option>
+            </select>
+            <input type="date" placeholder="Preferred Date" required>
+            <select required>
+                <option value="">Select a Time Slot</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+            </select>
+            <button type="submit" class="cta-button">Confirm Reservation</button>
+            <p class="privacy-note">We respect your privacy. All bookings confirmed by phone or email.</p>
+        </form>
+    </section>
+
+    <!-- 5. LOCATIONS SECTION -->
+    <section id="locations" class="section locations-section">
+        <h2 class="section-title">Find Your AARA Sanctuary</h2>
+        <p class="tagline-dark">Two convenient, premium locations built for your relaxation.</p>
+
+        <div class="location-container">
+            <div class="location-card">
+                <h3>AARA SALON - Nizampet</h3>
+                <address>
+                    1st Floor, SBI Building, Nizampet Rd<br>
+                    Nizampet, Hyderabad, 500090
+                </address>
+                <p>Phone: +91 9247522061</p>
+                <a href="https://maps.app.goo.gl/A69N3dNLugy1cT1LA" target="_blank" class="location-link">Get Directions</a>
+            </div>
+             <div class="location-card">
+                <h3>Boutique Centre - East Hills</h3>
+                <address>
+                    456 Serenity Road, Plaza Level<br>
+                    East Hills Residency, 560002
+                </address>
+                <p>Phone: +91 9876543210</p>
+                <a href="https://maps.app.goo.gl/A69N3dNLugy1cT1LA" target="_blank" class="location-link">Check Availability</a>
+            </div> 
+        </div>
+    </section>
+
+    <!-- 6. REVIEWS SECTION -->
+    <section id="reviews" class="section reviews-section">
+        <h2 class="section-title-reviews">Client Love. Lasting Impressions.</h2>
+        <p class="tagline-dark-reviews">Hear from those who've experienced the AARA difference.</p>
+
+        <div class="review-container">
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"The best hair coloring service I've ever had. My stylist, Rhea, was an absolute professional and truly listened to what I wanted. Worth every penny!"</p>
+                <p class="review-author">— Anjali M.</p>
+            </div>
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I booked my bridal makeup here and was blown away. Flawless execution and I felt so relaxed. The team is genuinely lovely."</p>
+                <p class="review-author">— Sarah P.</p>
+            </div>
+            <div class="review-card">
+                <div class="star-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">"Great facial treatment! My skin felt rejuvenated. Only slight wait time, but the service quality makes up for it. Highly recommend."</p>
+                <p class="review-author">— Ben K.</p>
+            </div>
+        </div>
+        <a href="#booking" class="secondary-button">Leave a Review</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">AARA Salon</h3>
+                <p>Excellence in Hair, Makeup, and Skin.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="services.html">Services</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#locations">Locations</a>
+                <a href="#booking">Book Now</a>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2025 AARA Salon. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- OTP Verification Modal Structure -->
+    <div id="otp-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Verify Your Mobile Number</h3>
+            <p>A 6-digit OTP has been sent to **<span id="display-mobile-number"></span>**.</p>
+            <div class="otp-input-group">
+                <input type="text" id="otp-input" maxlength="6" placeholder="Enter OTP" inputmode="numeric" pattern="[0-9]{6}" required>
+            </div>
+            <button id="verify-otp-button" class="cta-button">Verify & Confirm</button>
+            <div class="modal-footer-links">
+                <p>Didn't receive it? <a href="#" id="resend-otp">Resend OTP</a></p>
+                <button id="close-modal" class="secondary-button-transparent">Cancel Booking</button>
+            </div>
+            <p id="modal-message" class="modal-message"></p>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Global Variables ---
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.hero-slide');
+            const dotsContainer = document.querySelector('.slider-dots');
+            const totalSlides = slides.length;
+            const mobileInput = document.getElementById('mobile-number');
+
+            // --- Mobile Menu Toggle ---
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            // Close menu on link click
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // --- Hero Slider Logic ---
+            
+            function updateSlider() {
+                // Remove active class from all slides and dots
+                slides.forEach(slide => slide.classList.remove('active'));
+                document.querySelectorAll('.slider-dot').forEach(dot => dot.classList.remove('active'));
+
+                // Add active class to the current slide and dot
+                slides[currentSlide].classList.add('active');
+                dotsContainer.children[currentSlide].classList.add('active');
+            }
+
+            function moveToNextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+
+            function createDots() {
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('slider-dot');
+                    dot.setAttribute('data-slide-index', i);
+                    dot.addEventListener('click', () => {
+                        currentSlide = i;
+                        updateSlider();
+                        clearInterval(autoSlideInterval); // Reset interval on manual interaction
+                        autoSlideInterval = setInterval(moveToNextSlide, 6000);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+                updateSlider(); // Initialize the first slide/dot
+            }
+
+            // Arrow listeners
+            document.querySelector('.right-arrow').addEventListener('click', () => {
+                moveToNextSlide();
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(moveToNextSlide, 6000);
+            });
+
+            document.querySelector('.left-arrow').addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(moveToNextSlide, 6000);
+            });
+
+            createDots();
+            let autoSlideInterval = setInterval(moveToNextSlide, 6000);
+
+
+            // --- OTP Verification Modal Logic ---
+            const bookingForm = document.getElementById('booking-form');
+            const otpModal = document.getElementById('otp-modal');
+            const closeModalButton = document.getElementById('close-modal');
+            const verifyOtpButton = document.getElementById('verify-otp-button');
+            const resendOtpLink = document.getElementById('resend-otp');
+            const modalMessage = document.getElementById('modal-message');
+            const displayMobileNumber = document.getElementById('display-mobile-number');
+            const otpInput = document.getElementById('otp-input');
+
+            // 1. Show Modal on Form Submission
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get the mobile number to display in the modal
+                const mobileNumber = mobileInput.value;
+                displayMobileNumber.textContent = mobileNumber;
+
+                // Show the modal
+                modalMessage.textContent = ""; // Clear previous messages
+                otpInput.value = ""; // Clear previous OTP attempts
+                otpModal.classList.add('active');
+            });
+
+            // 2. Hide Modal
+            function closeModal() {
+                otpModal.classList.remove('active');
+            }
+
+            closeModalButton.addEventListener('click', closeModal);
+            // Also close when clicking outside the modal content
+            otpModal.addEventListener('click', function(e) {
+                if (e.target === otpModal) {
+                    closeModal();
+                }
+            });
+
+            // 3. OTP Verification Placeholder Logic
+            verifyOtpButton.addEventListener('click', function() {
+                const otp = otpInput.value;
+                const expectedOtp = "123456"; // Placeholder correct OTP for testing
+
+                if (otp.length === 6 && /^\d+$/.test(otp)) {
+                    if (otp === expectedOtp) {
+                        modalMessage.textContent = "Success! Your reservation is confirmed. We look forward to seeing you!";
+                        modalMessage.style.color = '#28a745'; // Green for success
+                        verifyOtpButton.disabled = true;
+                        setTimeout(closeModal, 3000);
+                        // In a real app, you would send the booking data to the server here.
+                    } else {
+                        modalMessage.textContent = "Error: Invalid OTP. Please try again.";
+                        modalMessage.style.color = '#cc0000'; // Red for error
+                    }
+                } else {
+                    modalMessage.textContent = "Please enter a valid 6-digit code.";
+                    modalMessage.style.color = '#cc0000';
+                }
+            });
+
+            // 4. Resend OTP Placeholder Logic
+            resendOtpLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                modalMessage.textContent = "New OTP has been sent. Check your mobile. (Placeholder logic)";
+                modalMessage.style.color = '#d4a373'; // Gold for informational message
+            });
+
+            // 5. Input filtering for OTP (only numbers)
+            otpInput.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '').substring(0, 6);
+            });
+            
+        });
+    </script>
+
+</body>
+</html>
